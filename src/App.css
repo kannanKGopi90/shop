@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.login_outer_div{
+  width: 300px;
+  border-color: #61dafb;
+  border-style: solid;
+  padding: 50px 50px 50px 50px;
+  border-radius: 10mm;
+  text-align: center;
+}
