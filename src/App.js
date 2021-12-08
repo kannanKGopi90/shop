@@ -1,4 +1,6 @@
 import './App.css';
+import { Dashboard } from './components/dashboard';
+import { BrowserRouter,Router,Switch } from 'react-router-dom';
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <button>submit</button>
       </div>
       </>
+      <Dashboard></Dashboard>
     </div>
   );
 }
