@@ -1,10 +1,25 @@
 import './App.css';
+import React ,{Component} from "react";
 import { Dashboard } from './components/dashboard';
-import { BrowserRouter,Router,Switch } from 'react-router-dom';
+import { Route,Routes,Router } from 'react-router-dom';
 import {useState} from 'react';
 import { collection,where,getDocs,query } from 'firebase/firestore';
 import db from './firebase/firebase';
-import { async } from '@firebase/util';
+
+export const Protect=({component:Component,...rest})=>{
+  return(
+    <Route
+     {...rest}
+      render={(props)=>{
+        getCookies() ? (
+          <Component {...props}/>
+        ) : (
+          <Component {...props}/>
+        )
+      }
+    }/>
+  )
+}
 
 function App() {
   const [username, setusername] = useState("");
@@ -32,7 +47,9 @@ function App() {
         <button onClick={()=>handleClick()}>submit</button>
       </div>
       </>
-      <Dashboard></Dashboard>
+      <Routes>
+        <Route exact path="/path" element={<Dashboard/>}></Route>
+      </Routes>
     </div>
   );
 }
