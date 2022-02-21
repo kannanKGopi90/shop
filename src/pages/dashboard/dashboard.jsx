@@ -1,5 +1,3 @@
-export let Dashboard=()=>{
-    return(
-        <h1>dashboard</h1>
-    );
-}
+export let Dashboard = () => {
+  return <h1>dashboard</h1>;
+};
